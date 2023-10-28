@@ -1,0 +1,19 @@
+class Solution(object):
+    def convert(self, s, numRows):
+        """
+        :type s: str
+        :type numRows: int
+        :rtype: str
+        """
+        if (numRows)==1:
+             return s
+        list=['']*numRows
+        count=0
+        val=-1
+        for i in s:
+            list[count]+=i
+            if count==0 or count==numRows-1:
+                val*=-1
+            count+=val
+        return "".join(list)
+        
